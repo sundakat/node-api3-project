@@ -25,7 +25,7 @@ router.delete('/:id', validatePostId, (req, res) => {
   const id = req.params.id;
   postdb.remove(id)
     .then(post => {
-      res.status(200).json({ message: "post was not deleted.", post: req.post });
+      res.status(200).json({ message: "post was deleted.", post: req.post });
     })
     .catch(err => {
       console.log("Error: ", err)
